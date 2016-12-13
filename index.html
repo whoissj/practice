@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>远近</title>
+    <link rel="stylesheet" href="myCssStyle.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+       #div {
+           width: 100px;
+           height: 100px;
+           background-color: aqua;
+       }
+        #btn {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="开始" id="btn">
+<div id="div">
+</div>
+<script>
+    var timer;
+    var oInput = document.getElementById('btn');
+    var oDiv = document.getElementById('div');
+    oInput.onclick = function () {
+        this.value = this.value == '开始' ? '暂停' : '开始';
+        this.value == '暂停'? (timer = setInterval(updateTime,50)) : (clearInterval(timer));
+    };
+    function updateTime() {
+        var oHeight = oDiv.offsetHeight;
+        var oWidth = oDiv.offsetWidth;
+        console.log(oHeight);
+        if(oWidth == 400) {
+            clearInterval(timer);
+            return
+        }
+        oDiv.style.height = oHeight + 1 + 'px';
+        oDiv.style.width = oWidth + 1 + 'px';
+    }
+</script>
+</body>
+</html>
