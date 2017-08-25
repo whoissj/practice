@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <title>Title</title>
+    <link rel="stylesheet" href="down.css">
+    <style>
+
+
+    </style>
+</head>
+<body class="combo">
+<div class="pattern left"><img src="download_pattern_left.png"></div>
+<div class="pattern right"><img src="download_pattern_right.png"></div>
+<div class="show-wechat-notice">
+    <div class="notice-wechat">
+        <div class="tips">
+            <p>点击右上角菜单</p>
+            <p>选择在浏览器中打开进行下载</p>
+        </div>
+        <img src="short-arrow.png" alt="">
+    </div>
+    <div class="out-container">
+        <div class="main">
+            <header>
+                <div class="table-container">
+                    <div class="cell-container">
+                        <div class="app-brief">
+                            <div class="icon-container wrapper">
+                            <span class="icon">
+                                <img src="http://firicon.fir.im/d67a5d1abb615b63f79b409d7c6a862212366068" itemprop="image">
+                            </span>
+                            <span class="qrcode" title="">
+                                <canvas width="200" height="200" style="display: none;"></canvas>
+                                <img alt="Scan me!" src="data:image/png;base64,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"
+                                     style="display: block;">
+                            </span>
+                            </div>
+                            <h1 class="name wrapper"> 无忧易考 </h1>
+                            <p class="scan-tips">扫描二维码下载<br>或用手机浏览器这个网址:&nbsp;&nbsp;<br><span class="text-black">https://fir.im/9e6h</span>
+                            </p>
+                            <div class="release-info">
+                                <p>版本：<span>1.0.0825</span></p>
+                                <p>更新于: <span>2017-08-25</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            console.log($('body').width());
+        })
+    </script>
+</body>
+</html>
