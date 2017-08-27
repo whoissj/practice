@@ -22,28 +22,12 @@
     </style>
 </head>
 <body>
-<input type="button" value="开始" id="btn">
-<div id="div">
-</div>
+<!--<input type="button" value="开始" id="btn">-->
+<!--<div id="div">-->
+<!--</div>-->
+<script src="echarts.min.js"></script>
 <script>
-    var timer;
-    var oInput = document.getElementById('btn');
-    var oDiv = document.getElementById('div');
-    oInput.onclick = function () {
-        this.value = this.value == '开始' ? '暂停' : '开始';
-        this.value == '暂停'? (timer = setInterval(updateTime,50)) : (clearInterval(timer));
-    };
-    function updateTime() {
-        var oHeight = oDiv.offsetHeight;
-        var oWidth = oDiv.offsetWidth;
-        console.log(oHeight);
-        if(oWidth == 400) {
-            clearInterval(timer);
-            return
-        }
-        oDiv.style.height = oHeight + 1 + 'px';
-        oDiv.style.width = oWidth + 1 + 'px';
-    }
+
 </script>
 </body>
 </html>

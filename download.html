@@ -16,17 +16,17 @@
     </style>
 </head>
 <body class="combo">
-<div class="pattern left"><img src="download_pattern_left.png"></div>
-<div class="pattern right"><img src="download_pattern_right.png"></div>
+<div class="pattern left" id="pattern-left"><img src="download_pattern_left.png"></div>
+<div class="pattern right" id="pattern-right"><img src="download_pattern_right.png"></div>
 <div class="show-wechat-notice">
-    <div class="notice-wechat">
+    <div class="notice-wechat" id="wechat-notice">
         <div class="tips">
             <p>点击右上角菜单</p>
             <p>选择在浏览器中打开进行下载</p>
         </div>
         <img src="short-arrow.png" alt="">
     </div>
-    <div class="out-container">
+    <div class="out-container" id="out-container">
         <div class="main">
             <header>
                 <div class="table-container">
@@ -42,12 +42,24 @@
                                      style="display: block;">
                             </span>
                             </div>
-                            <h1 class="name wrapper"> 无忧易考 </h1>
+                            <h1 class="name wrapper">
+                                <span>无忧易考</span>
+                            </h1>
                             <p class="scan-tips">扫描二维码下载<br>或用手机浏览器这个网址:&nbsp;&nbsp;<br><span class="text-black">https://fir.im/9e6h</span>
                             </p>
                             <div class="release-info">
                                 <p>版本：<span>1.0.0825</span></p>
                                 <p>更新于: <span>2017-08-25</span></p>
+                            </div>
+                            <div class="down-btn">
+                                <a id="ios-btn" href="https://itunes.apple.com/us/app/无忧易考/id1263340633?l=zh&ls=1&mt=8">
+                                    <img src="./icon-iphone.png" alt="">
+                                    <span class="my-title">下载安装</span>
+                                </a>
+                                <a id="android-btn" href="http://www.baidu.com">
+                                    <img src="./icon-android.png" alt="">
+                                    <span class="my-title">下载安装</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -59,7 +71,28 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(function () {
-            console.log($('body').width());
+            var wechatNotice = $('#wechat-notice');
+            var outerContainer = $('#out-container');
+            var patternLeft = $('#pattern-left');
+            var patternRight = $('#pattern-right');
+            var iosBtn = $('#ios-btn');
+            var androidBtn = $('#android-btn');
+            if(navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1){
+                wechatNotice.css('top','0');
+                outerContainer.css('top','180px');
+                patternLeft.css('top','180px');
+                patternRight.css('top','180px');
+            }else{
+                if(navigator.userAgent.toLowerCase().indexOf('android') !== -1) {
+                    androidBtn.css('display','inline-block');
+                    androidBtn.click()
+                }
+                if(navigator.userAgent.toLowerCase().indexOf('iphone') !== -1) {
+                    iosBtn.css('display','inline-block');
+                }
+
+            }
+
         })
     </script>
 </body>
